@@ -32,7 +32,8 @@ class _QuizzScreenState extends State<QuizzScreen> {
     shuffledQuestions.forEach((question) {
       question.options.shuffle(); // Mengacak opsi jawaban setiap pertanyaan
     });
-    shuffledQuestions.shuffle(); // Mengacak urutan pertanyaan
+    shuffledQuestions = List<Question>.from(questions)..shuffle(Random());
+    shuffledQuestions = shuffledQuestions.take(10).toList();
   }
 
   @override
