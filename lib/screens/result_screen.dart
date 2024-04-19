@@ -23,7 +23,7 @@ class _ResultScreenState extends State<ResultScreen> {
           SizedBox(
             width: double.infinity,
             child: Text(
-              "Congratulations",
+              widget.score > 6 ? "Congratulations" : "Tingkatkan!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: AppColor.secondaryColor,
@@ -45,7 +45,7 @@ class _ResultScreenState extends State<ResultScreen> {
           Text(
             "${widget.score}",
             style: TextStyle(
-              color: Colors.orange,
+              color: widget.score <= 3 ? Colors.red : (widget.score <= 6 ? Colors.orange : Colors.green),
               fontSize: 85.0,
               fontWeight: FontWeight.bold,
             ),
@@ -55,11 +55,13 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
+                //jika yakin maka pergi ke halaman hasil
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MainMenu(),
+                  builder: (context) => const MainMenu(),
                 ),
+                (Route<dynamic> route) => false,
               );
             },
             style: ButtonStyle(
