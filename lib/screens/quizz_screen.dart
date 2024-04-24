@@ -82,69 +82,97 @@ class _QuizzScreenState extends State<QuizzScreen> {
                   SizedBox(
                     width: double.infinity,
                     height: 200.0,
-                    child: Text(
-                      shuffledQuestions[index].question,
-                      style: TextStyle(
-                        color: AppColor.secondaryColor,
-                        fontSize: 22.0,
-                      ),
+                    child: Column(
+                      children: [
+                        Text(
+                          shuffledQuestions[index].question,
+                          style: TextStyle(
+                            color: AppColor.secondaryColor,
+                            fontSize: 22.0,
+                          ),
+                        ),
+                        if (shuffledQuestions[index].image != null) 
+                          Image.network(
+                            shuffledQuestions[index].image!, 
+                            width: 200, 
+                            height: 100, 
+                            fit: BoxFit.cover, 
+                          ),
+                      ]
                     ),
                   ),
                   //Menampilkan option
                   for (int i = 0; i < shuffledQuestions[index].options.length; i++)
-                    Container(
-                      width: double.infinity,
-                      height: 50.0,
-                      margin: const EdgeInsets.only(
-                        bottom: 20.0,
-                        left: 12.0,
-                        right: 12.0,
-                      ),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                              if (selectedAnswers[index] == shuffledQuestions[index].options[i]) {
-                                return AppColor.secondaryColor;
-                              }
-                              return AppColor.pripmaryColor;
-                            },
+                    Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(
+                            bottom: 20.0,
+                            left: 12.0,
+                            right: 12.0,
                           ),
-                          foregroundColor:
-                              MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                              if (selectedAnswers[index] == shuffledQuestions[index].options[i]) {
-                                return AppColor.pripmaryColor;
-                              }
-                              return AppColor.secondaryColor;
-                            },
-                          ),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                              side: BorderSide(color: AppColor.secondaryColor),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                                  if (selectedAnswers[index] == shuffledQuestions[index].options[i]) {
+                                    return AppColor.secondaryColor;
+                                  }
+                                  return AppColor.pripmaryColor;
+                                },
+                              ),
+                              foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                                  if (selectedAnswers[index] == shuffledQuestions[index].options[i]) {
+                                    return AppColor.pripmaryColor;
+                                  }
+                                  return AppColor.secondaryColor;
+                                },
+                              ),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  side: BorderSide(color: AppColor.secondaryColor),
+                                ),
+                              ),
                             ),
+                            onPressed: () {
+                              setState(() {
+                                selectedAnswers[index] = shuffledQuestions[index].options[i];
+                              });
+                            },
+                            child: shuffledQuestions[index].options[i].startsWith('assets/')
+                              ? Container(
+                                  width: 100,
+                                  height: 90,
+                                  child: Image.asset(
+                                    shuffledQuestions[index].options[i],
+                                    width: 50,
+                                    height: 50,
+                                  ),
+                                )
+                              : Container(
+                                  width: double.infinity,
+                                  height: 100.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.only(top: 8.0), 
+                                    child: Text(
+                                    shuffledQuestions[index].options[i] ?? '',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                    ),
+                                    ),
+                                  ),
+                                ),
                           ),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            selectedAnswers[index] = shuffledQuestions[index].options[i];
-                          });
-                        },
-                        //teks option
-                        child: Text(
-                          shuffledQuestions[index].options[i] ?? '',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
-                        ),
-                      ),
+                        SizedBox(height: 20.0), // Tambahkan SizedBox untuk jarak vertikal antar kotak
+                      ],
                     ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
+
+                    SizedBox(
+                      height: 40.0,
+                    ),
                   //button action
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,

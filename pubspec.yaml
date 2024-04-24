@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -17,3 +18,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+  - assets/image/OIP.jpeg
+  - assets/image/bulat.jpeg
+  - assets/image/spw.jpeg
+  - assets/image/timbangan.jpg
+  - assets/image/gamtek.png
+  - assets/image/gamtek2.png
+  - assets/image/jam.png
+
