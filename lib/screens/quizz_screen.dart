@@ -40,22 +40,22 @@ class _QuizzScreenState extends State<QuizzScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.pripmaryColor,
-      body: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: PageView.builder(
-          controller: _controller!,
-          onPageChanged: (page) {
-            setState(() {
-              btnText = (page == shuffledQuestions.length - 1)
-                  ? "Lihat Hasil"
-                  : "Selanjutnya";
-              btnPrev = (page == 0)  // kondisi jika page, merupakan page pertama
-                  ? ""  // tidak menampilkan tombol sebelumnya
-                  : "Sebelumnya"; // jika page bukan page pertama, ada tombol sebelumnya
-            });
-          },
-          itemBuilder: (context, index) {
-            return SingleChildScrollView(  // menggunakan single scroll view agar bisa di scroll
+      body: PageView.builder(
+        controller: _controller!,
+        onPageChanged: (page) {
+          setState(() {
+            btnText = (page == shuffledQuestions.length - 1)
+                ? "Lihat Hasil"
+                : "Selanjutnya";
+            btnPrev = (page == 0)  // kondisi jika page, merupakan page pertama
+                ? ""  // tidak menampilkan tombol sebelumnya
+                : "Sebelumnya"; // jika page bukan page pertama, ada tombol sebelumnya
+          });
+        },
+        itemBuilder: (context, index) {
+          return SingleChildScrollView(  // menggunakan single scroll view agar bisa di scroll
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,7 +95,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                           Image.network(
                             shuffledQuestions[index].image!, 
                             width: 200, 
-                            height: 100, 
+                            height: 150, 
                             fit: BoxFit.cover, 
                           ),
                       ]
@@ -143,8 +143,9 @@ class _QuizzScreenState extends State<QuizzScreen> {
                             },
                             child: shuffledQuestions[index].options[i].startsWith('assets/')
                               ? Container(
-                                  width: 100,
-                                  height: 90,
+                                  padding: EdgeInsets.all(10),
+                                  width: double.infinity,
+                                  height: 150,
                                   child: Image.asset(
                                     shuffledQuestions[index].options[i],
                                     width: 50,
@@ -152,16 +153,14 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                   ),
                                 )
                               : Container(
+                                  padding: EdgeInsets.all(10),
                                   width: double.infinity,
-                                  height: 100.0,
-                                  child: Container(
-                                    padding: const EdgeInsets.only(top: 8.0), 
-                                    child: Text(
-                                    shuffledQuestions[index].options[i] ?? '',
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                    ),
-                                    ),
+                                  // height: 100.0,
+                                  child: Text(
+                                  shuffledQuestions[index].options[i] ?? '',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                  ),
                                   ),
                                 ),
                           ),
@@ -169,7 +168,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                         SizedBox(height: 20.0), // Tambahkan SizedBox untuk jarak vertikal antar kotak
                       ],
                     ),
-
+                    
                     SizedBox(
                       height: 40.0,
                     ),
@@ -255,7 +254,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                   score++;
                                 });
                               }
-
+                    
                               if (index < shuffledQuestions.length - 1) {
                                 //jika belum sampai pertanyaan terakhir maka index bertambah
                                 setState(() {
@@ -325,11 +324,11 @@ class _QuizzScreenState extends State<QuizzScreen> {
                   ),
                 ],
               ),
-            );
-          },
-          itemCount:
-              shuffledQuestions.length, 
-        ),
+            ),
+          );
+        },
+        itemCount:
+            shuffledQuestions.length, 
       ),
     );
   }
