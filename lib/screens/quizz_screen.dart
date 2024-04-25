@@ -1,7 +1,9 @@
 // Import library 
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:nyoba_quiz_app_soalacak/data/list_pertanyaan.dart'; 
 import 'package:nyoba_quiz_app_soalacak/model/question.dart'; 
 import 'package:nyoba_quiz_app_soalacak/screens/result_screen.dart';
@@ -41,6 +43,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
     return Scaffold(
       backgroundColor: AppColor.pripmaryColor,
       body: PageView.builder(
+        physics: NeverScrollableScrollPhysics(),
         controller: _controller!,
         onPageChanged: (page) {
           setState(() {
@@ -79,26 +82,34 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     height: 10.0,
                   ),
                   //Menampilkan pertanyan
-                  SizedBox(
-                    width: double.infinity,
-                    height: 200.0,
-                    child: Column(
-                      children: [
-                        Text(
-                          shuffledQuestions[index].question,
-                          style: TextStyle(
-                            color: AppColor.secondaryColor,
-                            fontSize: 22.0,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: 100,
+                      maxHeight: double.infinity,
+                    ),
+                    child: SizedBox(
+                      width: double.infinity,
+                      // height: double.infinity,
+                      child: Column(
+                        children: [
+                          Text(
+                            shuffledQuestions[index].question,
+                            style: TextStyle(
+                              color: AppColor.secondaryColor,
+                              fontSize: 22.0,
+                            ),
                           ),
-                        ),
-                        if (shuffledQuestions[index].image != null) 
-                          Image.network(
-                            shuffledQuestions[index].image!, 
-                            width: 200, 
-                            height: 150, 
-                            fit: BoxFit.cover, 
-                          ),
-                      ]
+                          SizedBox(height: 20,),
+                          if (shuffledQuestions[index].image != null) 
+                            Image.network(
+                              shuffledQuestions[index].image!, 
+                              width: 200, 
+                              // height: 150, 
+                              fit: BoxFit.cover, 
+                            ),
+                          SizedBox(height: 40,),
+                        ]
+                      ),
                     ),
                   ),
                   //Menampilkan option
@@ -158,7 +169,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                   // height: 100.0,
                                   child: Text(
                                   shuffledQuestions[index].options[i] ?? '',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 18.0,
                                   ),
                                   ),
@@ -169,17 +180,59 @@ class _QuizzScreenState extends State<QuizzScreen> {
                       ],
                     ),
                     
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
-                  //button action
+
+                  //button prev/next action
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       if (index > 0)
                       //menampilkan tombol "sebelumnya" kecuali di halaman pertama
-                        Container(
-                          width: 150.0,
+                        Expanded(
+                          child: Container(
+                            // width: 150.0,
+                            height: 50.0,
+                            margin: const EdgeInsets.only(
+                              bottom: 20.0,
+                              left: 12.0,
+                              right: 12.0,
+                            ),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (index > 0) {
+                                  _controller!.previousPage(
+                                    duration: Duration(milliseconds: 250),  //durasi perpindahan page
+                                    curve: Curves.easeInExpo,
+                                  );
+                                  if (selectedAnswers[index-1] == shuffledQuestions[index-1].answer) {
+                                  //jika jawaban benar
+                                  setState(() {
+                                    score-=1;
+                                  });
+                                }
+                                }
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    return AppColor.thirdColor;
+                                  },
+                                ),
+                              ),
+                              child: Text(
+                                btnPrev,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ),
+                      //Tombol "selanjutnya"
+                      Expanded(
+                        child: Container(
+                          // width: 150.0,
                           height: 50.0,
                           margin: const EdgeInsets.only(
                             bottom: 20.0,
@@ -188,135 +241,98 @@ class _QuizzScreenState extends State<QuizzScreen> {
                           ),
                           child: ElevatedButton(
                             onPressed: () {
-                              if (index > 0) {
-                                _controller!.previousPage(
-                                  duration: Duration(milliseconds: 250),  //durasi perpindahan page
-                                  curve: Curves.easeInExpo,
+                              //jika tidak memilih jawaban
+                              if (selectedAnswers[index] == null) {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: const Text('Peringatan'),
+                                      content: const Text(
+                                          'Harap pilih jawaban sebelum melanjutkan.'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('OK'),
+                                        ),
+                                      ],
+                                    );
+                                  },
                                 );
-                                if (selectedAnswers[index-1] == shuffledQuestions[index-1].answer) {
-                                //jika jawaban benar
-                                setState(() {
-                                  score-=1;
-                                });
-                              }
+                              } else {
+                                //jika memilih jawaban
+                                if (selectedAnswers[index] == shuffledQuestions[index].answer) {
+                                  //jika jawaban benar
+                                  setState(() {
+                                    score++;
+                                  });
+                                }
+                                            
+                                if (index < shuffledQuestions.length - 1) {
+                                  //jika belum sampai pertanyaan terakhir maka index bertambah
+                                  setState(() {
+                                    index++;
+                                  });
+                                  _controller!.nextPage(
+                                    duration: Duration(milliseconds: 250), //durasi pindah ke halaman selanjutnya
+                                    curve: Curves.easeInExpo,
+                                  );
+                                } else {
+                                  //jika sudah sampai di pertanyaan terakhir
+                                  showDialog(
+                                    //dialog konfirmasi
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Text('Yakin mengakhiri kuis?'),
+                                        content: Text('Periksa kembali jawaban anda'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop(); // Tutup dialog
+                                            },
+                                            child: Text('Kembali ke Kuis'),
+                                          ),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              // Tambahkan aksi yang ingin dilakukan jika 'Yakin' dipilih
+                                              Navigator.of(context).pop(); // Tutup dialog
+                                              Navigator.pushAndRemoveUntil(
+                                                //jika yakin maka pergi ke halaman hasil
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => ResultScreen(score),
+                                                ),
+                                                (Route<dynamic> route) => false,
+                                              );
+                                            },
+                                            child: Text('Yakin'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  
+                                }
                               }
                             },
                             style: ButtonStyle(
                               backgroundColor:
                                   MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                                  return AppColor.thirdColor;
+                                  if (states.contains(MaterialState.pressed)) {
+                                    return AppColor.secondaryColor;
+                                  }
+                                  return AppColor.thirdColor; 
                                 },
                               ),
                             ),
                             child: Text(
-                              btnPrev,
+                              btnText,
                               style: TextStyle(color: Colors.white),
                             ),
-                          ),
-                        ),
-                      //Tombol "selanjutnya"
-                      Container(
-                        width: 150.0,
-                        height: 50.0,
-                        margin: const EdgeInsets.only(
-                          bottom: 20.0,
-                          left: 12.0,
-                          right: 12.0,
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            //jika tidak memilih jawaban
-                            if (selectedAnswers[index] == null) {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: Text('Peringatan'),
-                                    content: Text(
-                                        'Harap pilih jawaban sebelum melanjutkan.'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('OK'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            } else {
-                              //jika memilih jawaban
-                              if (selectedAnswers[index] == shuffledQuestions[index].answer) {
-                                //jika jawaban benar
-                                setState(() {
-                                  score++;
-                                });
-                              }
-                    
-                              if (index < shuffledQuestions.length - 1) {
-                                //jika belum sampai pertanyaan terakhir maka index bertambah
-                                setState(() {
-                                  index++;
-                                });
-                                _controller!.nextPage(
-                                  duration: Duration(milliseconds: 250), //durasi pindah ke halaman selanjutnya
-                                  curve: Curves.easeInExpo,
-                                );
-                              } else {
-                                //jika sudah sampai di pertanyaan terakhir
-                                showDialog(
-                                  //dialog konfirmasi
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title: Text('Yakin mengakhiri kuis?'),
-                                      content: Text('Periksa kembali jawaban anda'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop(); // Tutup dialog
-                                          },
-                                          child: Text('Kembali ke Kuis'),
-                                        ),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            // Tambahkan aksi yang ingin dilakukan jika 'Yakin' dipilih
-                                            Navigator.of(context).pop(); // Tutup dialog
-                                            Navigator.pushAndRemoveUntil(
-                                              //jika yakin maka pergi ke halaman hasil
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => ResultScreen(score),
-                                              ),
-                                              (Route<dynamic> route) => false,
-                                            );
-                                          },
-                                          child: Text('Yakin'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                                
-                              }
-                            }
-                          },
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.resolveWith<Color>(
-                              (Set<MaterialState> states) {
-                                if (states.contains(MaterialState.pressed)) {
-                                  return AppColor.secondaryColor;
-                                }
-                                return AppColor.thirdColor; 
-                              },
-                            ),
-                          ),
-                          child: Text(
-                            btnText,
-                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
