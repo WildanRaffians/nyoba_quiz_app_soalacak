@@ -13,25 +13,25 @@ List<Question> questions = [
     ),
     Question(
       question: "Simbol proyeksi sudut pertama adalah...",
-      options: ["assets/images/a.png", "assets/images/b.png", "assets/images/c.png", "assets/images/d.png", "assets/images/e.png"],
-      answer: "assets/images/b.png"
+      options: ["assets/image/a.png", "assets/image/b.png", "assets/image/c.png", "assets/image/d.png", "assets/image/e.png"],
+      answer: "assets/image/b.png"
     ),
     Question(
       question: "Simbol proyeksi sudut ketiga adalah...",
-      options: ["assets/images/a.png", "assets/images/b.png", "assets/images/c.png", "assets/images/d.png", "assets/images/e.png"],
-      answer: "assets/images/d.png"
+      options: ["assets/image/a.png", "assets/image/b.png", "assets/image/c.png", "assets/image/d.png", "assets/image/e.png"],
+      answer: "assets/image/d.png"
     ),
     Question(
       question: "Cara proyeksi sudut pertama yang benar adalah.....",
-      image: "assets/images/soal.png",
-      options: ["assets/images/pro1.png","assets/images/pro2.png","assets/images/pro3.png","assets/images/pro4.png","assets/images/pro5.png"],
-      answer: "assets/images/pro1.png"
+      image: "assets/image/soal.png",
+      options: ["assets/image/pro1.png","assets/image/pro2.png","assets/image/pro3.png","assets/image/pro4.png","assets/image/pro5.png"],
+      answer: "assets/image/pro1.png"
     ),
     Question(
       question: "Cara proyeksi sudut ketiga yang benar adalah.....",
-      image: "assets/images/soal.png",
-      options: ["assets/images/pro1.png","assets/images/pro2.png","assets/images/pro3.png","assets/images/pro4.png","assets/images/pro5.png"],
-      answer: "assets/images/pro2.png"
+      image: "assets/image/soal.png",
+      options: ["assets/image/pro1.png","assets/image/pro2.png","assets/image/pro3.png","assets/image/pro4.png","assets/image/pro5.png"],
+      answer: "assets/image/pro2.png"
     ),
     Question(
       question: "Cara memproyeksikan gambar dalam bentuk 2D dengan menggunakan proyeksi …",
@@ -118,388 +118,388 @@ List<Question> questions = [
       ],
       answer: "Proyeksi Eropa",
     ),
+      Question(
+        question: "Gambar diatas merupakan pandangan pada proyeksi …..",
+        image: "assets/image/soaln15 (part 2).png",
+        options: [
+          "Proyeksi Eropa","Proyeksi Belanda","Proyeksi Amerika","Proyeksi Jepang","Proyeksi Indonesia"
+        ],
+        answer: "Proyeksi Amerika",
+      ),
     Question(
-      question: "Gambar diatas merupakan pandangan pada proyeksi …..",
-      image: "assets/image/soaln15 (part 2).png",
+      question: "Dalam bidang Teknik, gambar dapat diartikan sebagai ....",
       options: [
-        "Proyeksi Eropa","Proyeksi Belanda","Proyeksi Amerika","Proyeksi Jepang","Proyeksi Indonesia"
+        "Karya",
+        "Kuasa",
+        "Ilustrasi",
+        "Imajinasi",
+        "Bahasa Teknik"
       ],
-      answer: "Proyeksi Amerika",
+      answer: "Bahasa Teknik"
     ),
-  Question(
-    question: "Dalam bidang Teknik, gambar dapat diartikan sebagai ....",
-    options: [
-      "Karya",
-      "Kuasa",
-      "Ilustrasi",
-      "Imajinasi",
-      "Bahasa Teknik"
-    ],
-    answer: "Bahasa Teknik"
-  ),
-  Question(
-    question: "Fungsi Gambar Teknik sebagai bahan informasi teknik adalah ....",
-    options: [
-      "Gambar informasi Teknik sebagai informasi pembuatan roti tart",
-      "Dalam pembuatan suatu produk informasi untuk pembuatan tersebut seperti ukuran, bahan dan langkah pengerjaan yang akan dikerjakan oleh seorang operator",
-      "Dalam membuat patung dilakukan dengan pedoman gambar teknik",
-      "Informasi arah angin di informasikan dengan gambar Teknik",
-      "Informasi tentang gempa dan cuaca"
-    ],
-    answer: "Dalam pembuatan suatu produk informasi untuk pembuatan tersebut seperti ukuran, bahan dan langkah pengerjaan yang akan dikerjakan oleh seorang operator"
-  ),
-  Question(
-    question: "Pernyataan yang bukan pengertian gambar teknik adalah…",
-    options: [
-      "Bahasa yang digunakan antara perencana dan pelaksana",
-      "Seni yang mengutamakan keindahan untuk mendapatkan estetika suatu objek.",
-      "Kombinasi antara seni dan gambar sains yang dapat memberikan solusi bagi masalah keteknikan.",
-      "Bahasa universal yang digunakan seluruh dunia dan dapat menyatakan suatu bentuk lebih jelas daripada kata.",
-      "Bahasa gambar yang digunakan untuk keperluan dunia Teknik industry oleh perancang untuk mempercepat, menyimpan ide – ide, dan informasi untuk kebutuhan pembangunan mesin dan struktur."
-    ],
-    answer: "Seni yang mengutamakan keindahan untuk mendapatkan estetika suatu objek."
-  ),
-  Question(
-    question: "Pernyataan yang tepat mengenai fungsi gambar teknik adalah…",
-    options: [
-      "Menerangkan rangkaian yang akan dirakit",
-      "Menyuplai komponen yang pernah dibuat",
-      "Menyimpan komponen yang pernah diproduksi",
-      "Sebagai media penyampai informasi",
-      "Menerangkan biaya pembuatan"
-    ],
-    answer: "Sebagai media penyampai informasi"
-  ),
-  Question(
-    question: "Melalui gambar teknik diwujudkan melalui proses, dianalisa kemudian diteliti dan dievaluasi sampai membentuk gambar, adalah penjelasan dari …",
-    options: [
-      "Bahasa teknik",
-      "Informasi Teknik",
-      "Gagasan atau pemikiran",
-      "Fungsi gambar teknik",
-      "Standarisasi"
-    ],
-    answer: "Gagasan atau pemikiran"
-  ),
-  Question(
-    question: "Seorang pemesan produk mesin datang ke juru gambar dan juru gambar ke operator mesin serta ke perakitan dengan membawa gambar teknik, adalah pengertian dari …. ",
-    options: [
-      "Bahasa teknik",
-      "Informasi teknik",
-      "Gagasan atau pemikiran",
-      "Fungsi gambar teknik",
-      "Standarisasi"
-    ],
-    answer: "Informasi teknik"
-  ),
-  Question(
-    question: "Berikut merupakan peralatan menggambar, kecuali …",
-    options: [
-      "Pensil",
-      "Jangka",
-      "Jangka Sorong",
-      "Busur",
-      "Mal Elips"
-    ],
-    answer: "Jangka Sorong"
-  ),
-  Question(
-    question: "Untuk membuat lingkaran kecil dapat digunakan alat gambar berupa…",
-    options: [
-      "Jangka",
-      "Mal elips",
-      "Mal kurva",
-      "Mal lingkaran",
-      "Busur derajat"
-    ],
-    answer: "Mal lingkaran"
-  ),
-  Question(
-    question: "Untuk membuat lingkaran besar dapat digunakan alat gambar berupa….",
-    options: [
-      "Jangka",
-      "Busur derajat",
-      "Mal lingkaran",
-      "Mal kurva",
-      "Mal elips"
-    ],
-    answer: "Jangka"
-  ),
-  Question(
-    question: "Berikut yang merupakan sudut – sudut penggaris segitiga adalah….",
-    options: [
-      "90°, 70°, dan 30°",
-      "90°, 60°, dan 30°",
-      "90°, 60°, dan 45°",
-      "90°, 45°, dan 45°",
-      "90°, 55°, dan 45°"
-    ],
-    answer: "90°, 60°, dan 30°"
-  ),
-  Question(
-    question: "Urutan tingkat kekerasan pensil dari yang paling keras ke lunak adalah…",
-    options: [
-      "F, HB, 4H, 5H, dan 2B",
-      "HB, F, 5H, 4H, dan B",
-      "5H, 7H, 9H, dan 2B",
-      "8H, 6H, 4H, F, dan B",
-      "8B, 6B, 4B, B, dan H"
-    ],
-    answer: "8H, 6H, 4H, F, dan B"
-  ),
-  Question(
-    question: "Angka pada kode pensil 2H dalam pensil memiliki arti tingkat…..",
-    options: [
-      "Kelunakan",
-      "Ketebalan",
-      "Kehitaman",
-      "Bold",
-      "Kekerasan"
-    ],
-    answer: "Kekerasan"
-  ),
-  Question(
-    question: "Alat gambar yang sangat praktis dan tepat untuk membuat gambar teknik dengan tinta adalah ….",
-    options: [
-      "Bulpoin",
-      "Raphido",
-      "Spidol",
-      "Pena Tarik",
-      "Spidol"
-    ],
-    answer: "Raphido"
-  ),
-  Question(
-    question: "Mal huruf dan angka merupakan alat gambar yang digunakan untuk…",
-    options: [
-      "Membuat tulisan atau menempatkan angka pada gambar kerja",
-      "Membuat lingkaran besar pada gambar kerja",
-      "Membuat sudut 35° pada kertas gambar",
-      "Membuat lingkaran besar pada gambar kerja",
-      "Membuat garis lengkung parabola"
-    ],
-    answer: "Membuat tulisan atau menempatkan angka pada gambar kerja"
-  ),
-  Question(
-    question: "Fungsi alat gambar busur derajat adalah…",
-    options: [
-      "Membuat lingkaran besar pada gambar kerja",
-      "Membuat sudut 35° pada kertas gambar",
-      "Membuat lingkaran besar pada gambar kerja",
-      "Membuat garis lengkung parabola",
-      "Membuat tulisan atau menempatkan angka pada gambar kerja"
-    ],
-    answer: "Membuat sudut 35° pada kertas gambar"
-  ),
-  Question(
-    question: "Untuk mencapai tujuan dari menggambar teknik yang baik, hasilnya harus memenuhi standarisasi ISO, maka hal yang harus dilakukan ….",
-    options: [
-      "Mengunakan alat-alat gambar sesuai standar ISO",
-      "Mengunakan alat-alat gambar biasa",
-      "Mematuhi aturan standar ISO",
-      "Mewujudkan ide gagasan",
-      "Merealisasikan informasi Teknik"
-    ],
-    answer: "Mematuhi aturan standar ISO"
-  ),
-  Question(
-    question: "Standardisasi yang berlaku secara internasional adalah ….",
-    options: [
-      "ISO",
-      "ANSI",
-      "DIN",
-      "SNI",
-      "JIS"
-    ],
-    answer: "ISO"
-  ),
-  Question(
-    question: "Standardisasi nasional yang digunakan di negara Indonesia adalah…",
-    options: [
-      "JIS",
-      "SNI",
-      "DIN",
-      "ISO",
-      "ANSI"
-    ],
-    answer: "SNI"
-  ),
-  Question(
-    question: "Standarisasi diperlukan untuk menghindari salah pengertian dalam komunikasi teknik, misalnya JIS dibuat oleh negara ….",
-    options: [
-      "Jerman",
-      "Belanda",
-      "Jepang",
-      "Indonesia",
-      "Inggris"
-    ],
-    answer: "Jepang"
-  ),
-  Question(
-    question: "Berikut yang bukan merupakan fungsi dari dibuatnya standardisasi internasional adalah....",
-    options: [
-      "Menyeragamkan dalam komunikasi teknik",
-      "Menyatukan pengertian gambar antarnegara",
-      "Mengelompokkan mutu di setiap standar negara",
-      "Menghindari salah pengertian dalam mengartikan gambar teknik",
-      "Memudahkan komunikasi teknis antara pembuat gambar dan pengguna gambar"
-    ],
-    answer: "Mengelompokkan mutu di setiap standar negara"
-  ),
-  Question(
-    question: "Berikut hal-hal yang distandardisasi dalam gambar teknik, kecuali..",
-    options: [
-      "Huruf",
-      "Angka",
-      "Nama",
-      "Garis",
-      "Etiket"
-    ],
-    answer: "Nama"
-  ),
-  Question(
-    question: "Ukuran kertas A3 adalah...",
-    options: [
-      "841 x 1189 mm",
-      "594 x 841 mm",
-      "420 x 594 mm",
-      "297 x 420 mm",
-      "210 x 297 mm"
-    ],
-    answer: "297 x 420 mm"
-  ),
-  Question(
-    question: "Ukuran kertas A4 adalah...",
-    options: [
-      "841 x 1189 mm",
-      "594 x 841 mm",
-      "420 x 594 mm",
-      "297 x 420 mm",
-      "210 x 297 mm"
-    ],
-    answer: "210 x 297 mm"
-  ),
-  Question(
-    question: "Berikut adalah contoh-contoh ukuran kertas dalam penyajian gambar teknik, kecuali …",
-    options: [
-      "A9",
-      "A4",
-      "A0",
-      "A3",
-      "A1"
-    ],
-    answer: "A9"
-  ),
-  Question(
-    question: "Etiket adalah....",
-    options: [
-      "Suatu identitas yang menjelaskan berbagai keterangan pendukung sebagai pelengkap gambar",
-      "Aturan – aturan yang telah disepakati bersama",
-      "Perbandingan ukuran sebenarnya dengan objek sebenarnya",
-      "Teknik pemberian warna atau bayangan dengan cara membuat garis – garis paralel",
-      "Huruf dan angka Teknik"
-    ],
-    answer: "Suatu identitas yang menjelaskan berbagai keterangan pendukung sebagai pelengkap gambar"
-  ),
-  Question(
-    question: "Etiket dapat disebut juga sebagai …",
-    options: [
-      "Kolom keterangan nama",
-      "Kepala Gambar",
-      "Keterangan merek kertas",
-      "Tempat ukuran gambar",
-      "Kolom gambar"
-    ],
-    answer: "Kepala Gambar"
-  ),
-  Question(
-    question: "Posisi peletakkan etiket gambar pada media gambar adalah…",
-    options: [
-      "Atas",
-      "Pojok Kiri",
-      "Belakang",
-      "Cover",
-      "Pojok Kanan Bawah"
-    ],
-    answer: "Pojok Kanan Bawah"
- ),
- Question(
-    question: "Berikut adalah informasi/konten yang dimuat dalam etiket gambar, kecuali …",
-    options: [
-      "Nomor gambar",
-      "Skala",
-      "Nama gambar",
-      "Nomor tanda penduduk",
-      "Tanggal diperiksanya gambar"
-    ],
-    answer: "Nomor tanda penduduk"
-  ),
- Question(
-    question: "Untuk memudahkan komunikasi antara pembuat gambar dan pengguna gambar merupakan salah satu fungsi gambar teknik sebagai...",
-    options: [
-      "Menyimpan ide dan gagasan",
-      "Bahasa teknik",
-      "Pengembangan",
-      "Standardisasi internasional",
-      "Evaluasi konsep"
-    ],
-    answer: "Bahasa teknik"
-  ),
- Question(
-    question: "Berikut adalah jenis-jenis garis yang ada dalam gambar teknik, kecuali..",
-    options: [
-      "Garis tebal",
-      "Garis semu",
-      "Garis tipis",
-      "Garis gores",
-      "Garis titik-titik"
-    ],
-    answer: "Garis semu"
-  ),
- Question(
-    question: "Gambar garis (---------------) digunakan untuk menggambar ….",
-    options: [
-      "Garis maya",
-      "Garis arsir",
-      "Garis benda nyata",
-      "Garis sumbu",
-      "Garis nyata terhalang"
-    ],
-    answer: "Garis benda nyata"
-  ),
- Question(
-    question: "Penggolongan jenis garis ditentukan oleh bentuk dan ketebalannya. Untuk menggambar garis tepi atau benda nyata adalah .....",
-    options: [
-      "Garis tebal kontinyu",
-      "Garis tipis kontinyu (lurus)",
-      "Garis strip titik tebal",
-      "Garis strip titik ganda tipis",
-      "Garis bebas/bergelombang tipis"
-    ],
-    answer: "Garis tebal kontinyu"
-  ),
- Question(
-    question: "Garis strip titik seperti gambar di atas digunakan untuk menggambar …",
-    options: [
-      "Garis arsir",
-      "Garis tepi",
-      "Garis bantu",
-      "Garis sumbu",
-      "Tanda potongan"
-    ],
-    answer: "Garis sumbu"
-  ),
- Question(
-    question: "Garis Tipis Kontinu digunakan sebagai …",
-    options: [
-      "Garis Sumbu",
-      "Garis yang tidak kelihatan jelas",
-      "Garis yang kelihatan jelas",
-      "Garis yang menunjukan potongan",
-      "Garis ukur / arsiran"
-    ],
-    answer: "Garis ukur / arsiran"
-  ),
+    Question(
+      question: "Fungsi Gambar Teknik sebagai bahan informasi teknik adalah ....",
+      options: [
+        "Gambar informasi Teknik sebagai informasi pembuatan roti tart",
+        "Dalam pembuatan suatu produk informasi untuk pembuatan tersebut seperti ukuran, bahan dan langkah pengerjaan yang akan dikerjakan oleh seorang operator",
+        "Dalam membuat patung dilakukan dengan pedoman gambar teknik",
+        "Informasi arah angin di informasikan dengan gambar Teknik",
+        "Informasi tentang gempa dan cuaca"
+      ],
+      answer: "Dalam pembuatan suatu produk informasi untuk pembuatan tersebut seperti ukuran, bahan dan langkah pengerjaan yang akan dikerjakan oleh seorang operator"
+    ),
+    Question(
+      question: "Pernyataan yang bukan pengertian gambar teknik adalah…",
+      options: [
+        "Bahasa yang digunakan antara perencana dan pelaksana",
+        "Seni yang mengutamakan keindahan untuk mendapatkan estetika suatu objek.",
+        "Kombinasi antara seni dan gambar sains yang dapat memberikan solusi bagi masalah keteknikan.",
+        "Bahasa universal yang digunakan seluruh dunia dan dapat menyatakan suatu bentuk lebih jelas daripada kata.",
+        "Bahasa gambar yang digunakan untuk keperluan dunia Teknik industry oleh perancang untuk mempercepat, menyimpan ide – ide, dan informasi untuk kebutuhan pembangunan mesin dan struktur."
+      ],
+      answer: "Seni yang mengutamakan keindahan untuk mendapatkan estetika suatu objek."
+    ),
+    Question(
+      question: "Pernyataan yang tepat mengenai fungsi gambar teknik adalah…",
+      options: [
+        "Menerangkan rangkaian yang akan dirakit",
+        "Menyuplai komponen yang pernah dibuat",
+        "Menyimpan komponen yang pernah diproduksi",
+        "Sebagai media penyampai informasi",
+        "Menerangkan biaya pembuatan"
+      ],
+      answer: "Sebagai media penyampai informasi"
+    ),
+    Question(
+      question: "Melalui gambar teknik diwujudkan melalui proses, dianalisa kemudian diteliti dan dievaluasi sampai membentuk gambar, adalah penjelasan dari …",
+      options: [
+        "Bahasa teknik",
+        "Informasi Teknik",
+        "Gagasan atau pemikiran",
+        "Fungsi gambar teknik",
+        "Standarisasi"
+      ],
+      answer: "Gagasan atau pemikiran"
+    ),
+    Question(
+      question: "Seorang pemesan produk mesin datang ke juru gambar dan juru gambar ke operator mesin serta ke perakitan dengan membawa gambar teknik, adalah pengertian dari …. ",
+      options: [
+        "Bahasa teknik",
+        "Informasi teknik",
+        "Gagasan atau pemikiran",
+        "Fungsi gambar teknik",
+        "Standarisasi"
+      ],
+      answer: "Informasi teknik"
+    ),
+    Question(
+      question: "Berikut merupakan peralatan menggambar, kecuali …",
+      options: [
+        "Pensil",
+        "Jangka",
+        "Jangka Sorong",
+        "Busur",
+        "Mal Elips"
+      ],
+      answer: "Jangka Sorong"
+    ),
+    Question(
+      question: "Untuk membuat lingkaran kecil dapat digunakan alat gambar berupa…",
+      options: [
+        "Jangka",
+        "Mal elips",
+        "Mal kurva",
+        "Mal lingkaran",
+        "Busur derajat"
+      ],
+      answer: "Mal lingkaran"
+    ),
+    Question(
+      question: "Untuk membuat lingkaran besar dapat digunakan alat gambar berupa….",
+      options: [
+        "Jangka",
+        "Busur derajat",
+        "Mal lingkaran",
+        "Mal kurva",
+        "Mal elips"
+      ],
+      answer: "Jangka"
+    ),
+    Question(
+      question: "Berikut yang merupakan sudut – sudut penggaris segitiga adalah….",
+      options: [
+        "90°, 70°, dan 30°",
+        "90°, 60°, dan 30°",
+        "90°, 60°, dan 45°",
+        "90°, 45°, dan 45°",
+        "90°, 55°, dan 45°"
+      ],
+      answer: "90°, 60°, dan 30°"
+    ),
+    Question(
+      question: "Urutan tingkat kekerasan pensil dari yang paling keras ke lunak adalah…",
+      options: [
+        "F, HB, 4H, 5H, dan 2B",
+        "HB, F, 5H, 4H, dan B",
+        "5H, 7H, 9H, dan 2B",
+        "8H, 6H, 4H, F, dan B",
+        "8B, 6B, 4B, B, dan H"
+      ],
+      answer: "8H, 6H, 4H, F, dan B"
+    ),
+    Question(
+      question: "Angka pada kode pensil 2H dalam pensil memiliki arti tingkat…..",
+      options: [
+        "Kelunakan",
+        "Ketebalan",
+        "Kehitaman",
+        "Bold",
+        "Kekerasan"
+      ],
+      answer: "Kekerasan"
+    ),
+    Question(
+      question: "Alat gambar yang sangat praktis dan tepat untuk membuat gambar teknik dengan tinta adalah ….",
+      options: [
+        "Bulpoin",
+        "Raphido",
+        "Spidol",
+        "Pena Tarik",
+        "Spidol"
+      ],
+      answer: "Raphido"
+    ),
+    Question(
+      question: "Mal huruf dan angka merupakan alat gambar yang digunakan untuk…",
+      options: [
+        "Membuat tulisan atau menempatkan angka pada gambar kerja",
+        "Membuat lingkaran besar pada gambar kerja",
+        "Membuat sudut 35° pada kertas gambar",
+        "Membuat lingkaran besar pada gambar kerja",
+        "Membuat garis lengkung parabola"
+      ],
+      answer: "Membuat tulisan atau menempatkan angka pada gambar kerja"
+    ),
+    Question(
+      question: "Fungsi alat gambar busur derajat adalah…",
+      options: [
+        "Membuat lingkaran besar pada gambar kerja",
+        "Membuat sudut 35° pada kertas gambar",
+        "Membuat lingkaran besar pada gambar kerja",
+        "Membuat garis lengkung parabola",
+        "Membuat tulisan atau menempatkan angka pada gambar kerja"
+      ],
+      answer: "Membuat sudut 35° pada kertas gambar"
+    ),
+    Question(
+      question: "Untuk mencapai tujuan dari menggambar teknik yang baik, hasilnya harus memenuhi standarisasi ISO, maka hal yang harus dilakukan ….",
+      options: [
+        "Mengunakan alat-alat gambar sesuai standar ISO",
+        "Mengunakan alat-alat gambar biasa",
+        "Mematuhi aturan standar ISO",
+        "Mewujudkan ide gagasan",
+        "Merealisasikan informasi Teknik"
+      ],
+      answer: "Mematuhi aturan standar ISO"
+    ),
+    Question(
+      question: "Standardisasi yang berlaku secara internasional adalah ….",
+      options: [
+        "ISO",
+        "ANSI",
+        "DIN",
+        "SNI",
+        "JIS"
+      ],
+      answer: "ISO"
+    ),
+    Question(
+      question: "Standardisasi nasional yang digunakan di negara Indonesia adalah…",
+      options: [
+        "JIS",
+        "SNI",
+        "DIN",
+        "ISO",
+        "ANSI"
+      ],
+      answer: "SNI"
+    ),
+    Question(
+      question: "Standarisasi diperlukan untuk menghindari salah pengertian dalam komunikasi teknik, misalnya JIS dibuat oleh negara ….",
+      options: [
+        "Jerman",
+        "Belanda",
+        "Jepang",
+        "Indonesia",
+        "Inggris"
+      ],
+      answer: "Jepang"
+    ),
+    Question(
+      question: "Berikut yang bukan merupakan fungsi dari dibuatnya standardisasi internasional adalah....",
+      options: [
+        "Menyeragamkan dalam komunikasi teknik",
+        "Menyatukan pengertian gambar antarnegara",
+        "Mengelompokkan mutu di setiap standar negara",
+        "Menghindari salah pengertian dalam mengartikan gambar teknik",
+        "Memudahkan komunikasi teknis antara pembuat gambar dan pengguna gambar"
+      ],
+      answer: "Mengelompokkan mutu di setiap standar negara"
+    ),
+    Question(
+      question: "Berikut hal-hal yang distandardisasi dalam gambar teknik, kecuali..",
+      options: [
+        "Huruf",
+        "Angka",
+        "Nama",
+        "Garis",
+        "Etiket"
+      ],
+      answer: "Nama"
+    ),
+    Question(
+      question: "Ukuran kertas A3 adalah...",
+      options: [
+        "841 x 1189 mm",
+        "594 x 841 mm",
+        "420 x 594 mm",
+        "297 x 420 mm",
+        "210 x 297 mm"
+      ],
+      answer: "297 x 420 mm"
+    ),
+    Question(
+      question: "Ukuran kertas A4 adalah...",
+      options: [
+        "841 x 1189 mm",
+        "594 x 841 mm",
+        "420 x 594 mm",
+        "297 x 420 mm",
+        "210 x 297 mm"
+      ],
+      answer: "210 x 297 mm"
+    ),
+    Question(
+      question: "Berikut adalah contoh-contoh ukuran kertas dalam penyajian gambar teknik, kecuali …",
+      options: [
+        "A9",
+        "A4",
+        "A0",
+        "A3",
+        "A1"
+      ],
+      answer: "A9"
+    ),
+    Question(
+      question: "Etiket adalah....",
+      options: [
+        "Suatu identitas yang menjelaskan berbagai keterangan pendukung sebagai pelengkap gambar",
+        "Aturan – aturan yang telah disepakati bersama",
+        "Perbandingan ukuran sebenarnya dengan objek sebenarnya",
+        "Teknik pemberian warna atau bayangan dengan cara membuat garis – garis paralel",
+        "Huruf dan angka Teknik"
+      ],
+      answer: "Suatu identitas yang menjelaskan berbagai keterangan pendukung sebagai pelengkap gambar"
+    ),
+    Question(
+      question: "Etiket dapat disebut juga sebagai …",
+      options: [
+        "Kolom keterangan nama",
+        "Kepala Gambar",
+        "Keterangan merek kertas",
+        "Tempat ukuran gambar",
+        "Kolom gambar"
+      ],
+      answer: "Kepala Gambar"
+    ),
+    Question(
+      question: "Posisi peletakkan etiket gambar pada media gambar adalah…",
+      options: [
+        "Atas",
+        "Pojok Kiri",
+        "Belakang",
+        "Cover",
+        "Pojok Kanan Bawah"
+      ],
+      answer: "Pojok Kanan Bawah"
+   ),
+   Question(
+      question: "Berikut adalah informasi/konten yang dimuat dalam etiket gambar, kecuali …",
+      options: [
+        "Nomor gambar",
+        "Skala",
+        "Nama gambar",
+        "Nomor tanda penduduk",
+        "Tanggal diperiksanya gambar"
+      ],
+      answer: "Nomor tanda penduduk"
+    ),
+   Question(
+      question: "Untuk memudahkan komunikasi antara pembuat gambar dan pengguna gambar merupakan salah satu fungsi gambar teknik sebagai...",
+      options: [
+        "Menyimpan ide dan gagasan",
+        "Bahasa teknik",
+        "Pengembangan",
+        "Standardisasi internasional",
+        "Evaluasi konsep"
+      ],
+      answer: "Bahasa teknik"
+    ),
+   Question(
+      question: "Berikut adalah jenis-jenis garis yang ada dalam gambar teknik, kecuali..",
+      options: [
+        "Garis tebal",
+        "Garis semu",
+        "Garis tipis",
+        "Garis gores",
+        "Garis titik-titik"
+      ],
+      answer: "Garis semu"
+    ),
+   Question(
+      question: "Gambar garis (---------------) digunakan untuk menggambar ….",
+      options: [
+        "Garis maya",
+        "Garis arsir",
+        "Garis benda nyata",
+        "Garis sumbu",
+        "Garis nyata terhalang"
+      ],
+      answer: "Garis benda nyata"
+    ),
+   Question(
+      question: "Penggolongan jenis garis ditentukan oleh bentuk dan ketebalannya. Untuk menggambar garis tepi atau benda nyata adalah .....",
+      options: [
+        "Garis tebal kontinyu",
+        "Garis tipis kontinyu (lurus)",
+        "Garis strip titik tebal",
+        "Garis strip titik ganda tipis",
+        "Garis bebas/bergelombang tipis"
+      ],
+      answer: "Garis tebal kontinyu"
+    ),
+   Question(
+      question: "Garis strip titik seperti gambar di atas digunakan untuk menggambar …",
+      options: [
+        "Garis arsir",
+        "Garis tepi",
+        "Garis bantu",
+        "Garis sumbu",
+        "Tanda potongan"
+      ],
+      answer: "Garis sumbu"
+    ),
+   Question(
+      question: "Garis Tipis Kontinu digunakan sebagai …",
+      options: [
+        "Garis Sumbu",
+        "Garis yang tidak kelihatan jelas",
+        "Garis yang kelihatan jelas",
+        "Garis yang menunjukan potongan",
+        "Garis ukur / arsiran"
+      ],
+      answer: "Garis ukur / arsiran"
+    ),
   Question(
     question: "Pandangan depan pada gambar di bawah ini sesuai tanda panah, maka pandangan depan menurut proyeksi Amerika adalah... ",
     image: "assets/image/soalh.png",
@@ -646,7 +646,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Pandangan atas dari gambar 3D dibawah ini (Proyeksi Amerika) adalah …",
-    image: "assets/image/soaln25.png",
+    image: "assets/image/soaln23.png",
     options: [
       "assets/image/n25(1).png","assets/image/n25(2).png","assets/image/n25(3).png","assets/image/n25(4).png","assets/image/n25(5).png"
     ],
@@ -662,7 +662,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Pandangan depan untuk benda 3D di bawah ini adalah..",
-    image: "assets/image/soaln27.png",
+    image: "assets/image/soaln26.png",
     options: [
       "assets/image/n27(1).png","assets/image/n27(2).png","assets/image/n27(3).png","assets/image/n27(4).png","assets/image/n27(5).png"
     ],
@@ -670,7 +670,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Pandangan samping kanan dari gambar 3D (Proyeksi Amerika) dibawah ini adalah...",
-    image: "assets/image/soaln27.png",
+    image: "assets/image/soaln26.png",
     options: [
       "assets/image/n28(1).png","assets/image/n28(2).png","assets/image/n28(3).png","assets/image/n28(4).png","assets/image/n28(5).png"
     ],
@@ -678,7 +678,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Pandangan atas dari gambar 3D (proyeksi Amerika) dibawah ini adalah...",
-    image: "assets/image/soaln27.png",
+    image: "assets/image/soaln26.png",
     options: [
       "assets/image/n29(1).png","assets/image/n29(2).png","assets/image/n29(3).png","assets/image/n29(4).png","assets/image/n29(5).png"
     ],
@@ -750,7 +750,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Dari gambar dibawah, pandangan samping kanan dari gambar ini adalah nomor …",
-    image: "assets/image/soal18p2.png",
+    image: "assets/image/soaln18p2.png",
     options: [
       "1","2","3","4","5"
     ],
@@ -758,7 +758,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Dari gambar dibawah, pandangan depan dari gambar ini adalah nomor …",
-    image: "assets/image/soal18p2.png",
+    image: "assets/image/soaln18p2.png",
     options: [
       "1","2","3","4","5"
     ],
@@ -766,7 +766,7 @@ List<Question> questions = [
   ),
   Question(
     question: "Dari gambar dibawah, pandangan bawah dari gambar ini adalah nomor …",
-    image: "assets/image/soal18p2.png",
+    image: "assets/image/soaln18p2.png",
     options: [
       "1","2","3","4","5"
     ],
